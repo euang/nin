@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="content">
+<main class="site-main" role="main">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta">posted in {{ page.categories | join: ', '  }} on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %B, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</article>
+
+ {% if page.previous or page.next %}
+  <nav>
+  <ul class="vertical medium-horizontal menu">
+    {% if page.previous %}
+  <li><a href="{{ page.previous.url }}" rel="prev">Previous post</a></li>
+   {% endif %}
+  {% if page.next %}
+  <li><a href="{{ page.next.url }}" rel="next">Next post</a></li>
+   {% endif %}
+</ul></nav>
+   {% endif %}
+   </main>
+</div>
+ 
+  

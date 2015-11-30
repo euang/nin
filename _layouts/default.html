@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+   
+   <div class="row full">
+     <div class="sidebar medium-12 large-3 columns">
+       <div class="middle-header"> 
+
+          <h1><a href="{{ "/" | prepend: site.baseurl }}">test</a></h1>
+          <p class="lead">{{ site.description }}</p>
+           <p><nav id="social-navigation" class="social-navigation" role="navigation">
+				<div class="menu-social-links-container"><ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+        </div>			</nav></p>
+          </div>
+          </div>
+        
+      
+      <div class="medium-12 large-9 columns" role="content">
+        {{ content }}
+    </div>
+</div>
+
+
+  </body>
+
+</html>

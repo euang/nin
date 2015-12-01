@@ -22,14 +22,15 @@
 }
 
 
-.pagination-item.older{
+.pagination-item{
+	&.older{
 	float:left;
 }
-.pagination-item.newer{
+&.newer{
 	float:right;
 	text-align: right;
 }
-
+}
 
 pre code {
      display: inline-block;
@@ -39,3 +40,6 @@ pre {
      overflow-x: auto;
 }
 
+.post-meta{
+	font-size: small;
+}

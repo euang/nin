@@ -4,25 +4,24 @@ layout: default
 
 <div class="content">
     <main class="site-main" role="main">
-    {% for post in paginator.posts %}
- <article>     
-         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-         <span class="post-meta">posted in {{ post.categories | join: ', '  }} on {{ post.date | date: "%-d %B, %Y" }}</span>
-      {{post.excerpt}}
-         <a class="continue-link" href="{{ post.url | prepend: site.baseurl }}">Continue reading →</a>
-     
-     </article>
-    {% endfor %}
-  </main>
-  <nav>
- {% if paginator.next_page %}
- <a class="pagination-item older" href="{{paginator.next_page_path | prepend: site.baseurl }}">← Older posts </a>
- {% endif %}
- {% if paginator.previous_page %}  
-   <a class="pagination-item newer" href="{{paginator.previous_page_path | prepend: site.baseurl }}">Newer posts →</a>
-  {% endif %}
-  </nav>
-  
+        {% for post in paginator.posts %}
+        <article>
+            <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+            <span class="post-meta">posted in {{ post.categories | join: ', '  }} on {{ post.date | date: "%-d %B, %Y" }}</span>
+            {{post.excerpt}}
+            <a class="continue-link" href="{{ post.url | prepend: site.baseurl }}">Continue reading →</a>
+        </article>
+        {% endfor %}
+    </main>
+    <nav>
+        {% if paginator.next_page %}
+        <a class="pagination-item older" href="{{paginator.next_page_path | prepend: site.baseurl }}">← Older posts</a>
+        {% endif %}
+        {% if paginator.previous_page %}
+        <a class="pagination-item newer" href="{{paginator.previous_page_path | prepend: site.baseurl }}">Newer
+            posts</a>
+        {% endif %}
+    </nav>
 </div>
